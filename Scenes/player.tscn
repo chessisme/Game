@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8vkxrhkn1x14"]
 
 [ext_resource type="Script" uid="uid://u3m4gf3elfce" path="res://Scenes/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://etlhko3k0rdb" path="res://Art/PlayerShipCentered.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://d4ay0b170m22o" path="res://Ship.png" id="2_cvnsp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v0iea"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_v0iea")
+"texture": ExtResource("2_cvnsp")
 }],
 "loop": true,
 "name": &"Centered",
@@ -23,6 +23,8 @@ script = ExtResource("1_cvnsp")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 0.99999845)
+scale = Vector2(0.10937501, 0.10937501)
 sprite_frames = SubResource("SpriteFrames_v0iea")
 animation = &"Centered"
 
