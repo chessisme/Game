@@ -3,6 +3,7 @@ extends Area2D
 @export var speed = 400
 var screen_size
 var player_movement_vector
+var player_movement_magnitude
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,11 +12,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	player_movement_vector = Input.get_vector("Move Left","Move Right","Move Forward","Move Backward")
+	player_movement_magnitude = player_movement_vector.length()
+	player_movement_magnitude = clamp(player_movement_magnitude , 0 ,1) 
 	player_movement_vector = player_movement_vector.normalized()
 	
-	position += player_movement_vector * speed * delta
+	position += player_movement_vector * speed * player_movement_magnitude * delta
 	position = position.clamp(Vector2.ZERO,screen_size)
-	
-	pass

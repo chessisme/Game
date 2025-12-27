@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://baqiv8m37h36q"
-valid=false
+path="res://.godot/imported/playership.blend-6b15d500ce957f91f5d5e5b5438580ff.scn"
 
 [deps]
 
 source_file="res://playership.blend"
+dest_files=["res://.godot/imported/playership.blend-6b15d500ce957f91f5d5e5b5438580ff.scn"]
 
 [params]
 
