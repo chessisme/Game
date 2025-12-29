@@ -4,9 +4,11 @@
 [ext_resource type="Script" uid="uid://biiws1ceu152u" path="res://Scenes/camera_2d.gd" id="1_vsvp5"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(0, 6)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("1_vsvp5")
 
 [node name="Player" parent="." instance=ExtResource("1_0ba56")]
 position = Vector2(579, 476)
+scale = Vector2(0.50921774, 0.5)

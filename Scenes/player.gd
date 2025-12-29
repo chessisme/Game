@@ -4,12 +4,16 @@ extends Area2D
 var screen_size
 var player_movement_vector
 var player_movement_magnitude
+var left_limit
+var right_limit
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	position = screen_size/2
 	position.y = screen_size.y/1.25
+	left_limit = Vector2(screen_size.x*.2, 0)
+	right_limit = Vector2(screen_size.x*.8, screen_size.y)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -19,4 +23,4 @@ func _process(delta: float) -> void:
 	player_movement_vector = player_movement_vector.normalized()
 	
 	position += player_movement_vector * speed * player_movement_magnitude * delta
-	position = position.clamp(Vector2.ZERO,screen_size)
+	position = position.clamp(left_limit, right_limit)
