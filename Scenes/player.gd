@@ -6,6 +6,7 @@ var player_movement_vector
 var player_movement_magnitude
 var left_limit
 var right_limit
+signal hit
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,3 +25,8 @@ func _process(delta: float) -> void:
 	
 	position += player_movement_vector * speed * player_movement_magnitude * delta
 	position = position.clamp(left_limit, right_limit)
+
+#setup for player getting hit
+func _on_body_entered(body: Node2D) -> void:
+	print("Hit")
+	pass # Replace with function body.
