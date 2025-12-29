@@ -26,9 +26,9 @@ func _process(delta: float) -> void:
 	player_movement_magnitude = clamp(player_movement_magnitude , 0 ,1) 
 	player_movement_vector = player_movement_vector.normalized()
 	
-	if(player_movement_vector.x > 0.1):
+	if(player_movement_vector.x > 0.5):
 		animation_player.animation = "Right"
-	elif (player_movement_vector.x < -0.1):
+	elif (player_movement_vector.x < -0.5):
 		animation_player.animation = "Left"
 	else:
 		animation_player.animation = "Centered"
