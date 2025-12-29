@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb0w6yiisdcrp"]
+
+[ext_resource type="Texture2D" uid="uid://1d7eexj3bkmg" path="res://icon.svg" id="1_tt7e2"]
+[ext_resource type="Script" uid="uid://dgo7sccm4j388" path="res://Scenes/enemy.gd" id="1_wovta"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7bn3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tt7e2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hac7"]
+size = Vector2(128.5, 128)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_wovta")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_s7bn3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_2hac7")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.5, 0.5)
+rect = Rect2(-64, -64, 129, 128)
