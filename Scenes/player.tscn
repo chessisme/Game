@@ -1,9 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8vkxrhkn1x14"]
+[gd_scene load_steps=21 format=3 uid="uid://c8vkxrhkn1x14"]
 
 [ext_resource type="Script" uid="uid://u3m4gf3elfce" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cqgwrm5j5ovc0" path="res://Art/playerShip.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://nwo4g3jv41n1" path="res://Art/ShipFlipAnimation/frame0001.png" id="3_fs7ks"]
 [ext_resource type="Texture2D" uid="uid://cxkmltcxfjhp6" path="res://Art/playerShipTurnLeft.png" id="3_vgqql"]
 [ext_resource type="Texture2D" uid="uid://duiyhkih2s68x" path="res://Art/playerShipTurnRight.png" id="4_fkybt"]
+[ext_resource type="Texture2D" uid="uid://rn80ugghrlpy" path="res://Art/ShipFlipAnimation/frame0002.png" id="4_l6n3p"]
+[ext_resource type="Texture2D" uid="uid://bdl7w2lcjciat" path="res://Art/ShipFlipAnimation/frame0003.png" id="5_olqyp"]
+[ext_resource type="Texture2D" uid="uid://bi5xmoevwmvr6" path="res://Art/ShipFlipAnimation/frame0004.png" id="6_wpjfl"]
+[ext_resource type="Texture2D" uid="uid://crtrr8ypiws5s" path="res://Art/ShipFlipAnimation/frame0005.png" id="7_bi64h"]
+[ext_resource type="Texture2D" uid="uid://42wt17g6a4pi" path="res://Art/ShipFlipAnimation/frame0006.png" id="8_2ijsl"]
+[ext_resource type="Texture2D" uid="uid://canylwf0un1ba" path="res://Art/ShipFlipAnimation/frame0007.png" id="9_p1odr"]
+[ext_resource type="Texture2D" uid="uid://cuod7bagmij5l" path="res://Art/ShipFlipAnimation/frame0008.png" id="10_0gysh"]
+[ext_resource type="Texture2D" uid="uid://crt34yslg0mw1" path="res://Art/ShipFlipAnimation/frame0009.png" id="11_vfarp"]
+[ext_resource type="Texture2D" uid="uid://c7nl8o6eubrgx" path="res://Art/ShipFlipAnimation/frame0010.png" id="12_y6uwr"]
+[ext_resource type="Texture2D" uid="uid://b7poqap6f813n" path="res://Art/ShipFlipAnimation/frame0011.png" id="13_83xs0"]
+[ext_resource type="Texture2D" uid="uid://dcde25hvbhbwl" path="res://Art/ShipFlipAnimation/frame0012.png" id="14_ypfnu"]
+[ext_resource type="Texture2D" uid="uid://chbhn4n6vpdwj" path="res://Art/ShipFlipAnimation/frame0013.png" id="15_xuaoq"]
+[ext_resource type="Texture2D" uid="uid://nx5tnpbdboe1" path="res://Art/ShipFlipAnimation/frame0014.png" id="16_wohnl"]
+[ext_resource type="Texture2D" uid="uid://bko1tfyfmltq6" path="res://Art/ShipFlipAnimation/frame0015.png" id="17_36dho"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v0iea"]
 animations = [{
@@ -14,6 +29,56 @@ animations = [{
 "loop": true,
 "name": &"Centered",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fs7ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l6n3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_olqyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wpjfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bi64h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2ijsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p1odr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0gysh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vfarp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_y6uwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_83xs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ypfnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xuaoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wohnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_36dho")
+}],
+"loop": false,
+"name": &"Flip",
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -41,10 +106,11 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 0.99999845)
 sprite_frames = SubResource("SpriteFrames_v0iea")
-animation = &"Right"
+animation = &"Flip"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, 1)
 polygon = PackedVector2Array(0, -57, -18, -43, -50, 24, -44, 38, 0, 54, 44, 38, 50, 24, 18, -43)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_animation_finished"]
