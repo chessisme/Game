@@ -32,6 +32,8 @@ func _process(delta: float) -> void:
 	#Dodge input
 	if (Input.is_action_pressed("Dodge")):
 		animation_state = "dodge"
+		if(player_movement_vector.x < 0):
+			animation_player.flip_h = true
 		animation_player.play("Flip")
 	
 	#Animate the ship side to side
@@ -58,5 +60,6 @@ func _on_body_entered(body: Node2D) -> void:
 func _animation_finished() -> void:
 	print("Animation Stoped")
 	animation_state = "normal"
+	animation_player.flip_h = false
 	animation_player.stop()
 		
