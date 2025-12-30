@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://c8vkxrhkn1x14"]
 
-[ext_resource type="Script" uid="uid://u3m4gf3elfce" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://u3m4gf3elfce" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cqgwrm5j5ovc0" path="res://Art/playerShip.png" id="2_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://nwo4g3jv41n1" path="res://Art/ShipFlipAnimation/frame0001.png" id="3_fs7ks"]
 [ext_resource type="Texture2D" uid="uid://cxkmltcxfjhp6" path="res://Art/playerShipTurnLeft.png" id="3_vgqql"]

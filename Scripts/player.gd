@@ -81,7 +81,6 @@ func _on_body_exited(body: Node2D) -> void:
 #Called when an animation for the ship is finished
 #Return to the normal state
 func _animation_finished() -> void:
-	print("Animation Stoped")
 	animation_state = "normal"
 	animation_player.flip_h = false
 	animation_player.stop()
