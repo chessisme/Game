@@ -1,6 +1,10 @@
 extends Area2D
 
-@export var speed = 400
+@export var normal_speed = 400
+@export var dodge_speed = 550
+@export var boost_speed = 1000
+
+var curent_speed = 400
 @export var animation_player :AnimatedSprite2D
 var animation_state = "normal"
 
@@ -34,6 +38,8 @@ func _process(delta: float) -> void:
 		animation_state = "dodge"
 		if(player_movement_vector.x < 0):
 			animation_player.flip_h = true
+		if(abs(player_movement_vector.x) > 0.5):
+			animation_player.set_frame(4)
 		animation_player.play("Flip")
 	
 	#Animate the ship side to side
@@ -45,15 +51,22 @@ func _process(delta: float) -> void:
 		else:
 			animation_player.animation = "Centered"
 	
-		
+	#set speed fort curent situation
+	if(animation_state == "dodge"):
+		curent_speed = dodge_speed
+	elif (animation_state == "boost"):
+		curent_speed = boost_speed
+	else:
+		curent_speed = normal_speed
 		
 	#Move the player and clamp them to the bounds of the play area
-	position += player_movement_vector * speed * player_movement_magnitude * delta
+	position += player_movement_vector * curent_speed * player_movement_magnitude * delta
 	position = position.clamp(left_limit, right_limit)
 
 #setup for player getting hit
 func _on_body_entered(body: Node2D) -> void:
-	print("Hit")
+	if(animation_state != "dodge"):
+		print("Hit")
 
 #Called when an animation for the ship is finished
 #Return to the normal state
