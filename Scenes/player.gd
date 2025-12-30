@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 		if(player_movement_vector.x < 0):
 			animation_player.flip_h = true
 		if(abs(player_movement_vector.x) > 0.5):
-			animation_player.set_frame(4)
+			animation_player.set_frame(3)
 		animation_player.play("Flip")
 	
 	#Animate the ship side to side
