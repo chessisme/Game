@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cb0w6yiisdcrp" path="res://Scenes/Enemy.tscn" id="3_8rbpu"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(0, 6)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("1_vsvp5")

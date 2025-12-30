@@ -3,16 +3,20 @@ extends Area2D
 @export var normal_speed = 400
 @export var dodge_speed = 550
 @export var boost_speed = 1000
-
 var curent_speed = 400
+
 @export var animation_player :AnimatedSprite2D
 var animation_state = "normal"
 
-var screen_size
 var player_movement_vector
 var player_movement_magnitude
+
+var screen_size
 var left_limit
 var right_limit
+
+var touching_list = []
+
 signal hit
 
 
@@ -62,11 +66,17 @@ func _process(delta: float) -> void:
 	#Move the player and clamp them to the bounds of the play area
 	position += player_movement_vector * curent_speed * player_movement_magnitude * delta
 	position = position.clamp(left_limit, right_limit)
+	
+	#temporarily print the touching list if it isnt empty
+	if(!touching_list.is_empty() and animation_state != "dodge"):
+		print(touching_list)
 
 #setup for player getting hit
 func _on_body_entered(body: Node2D) -> void:
-	if(animation_state != "dodge"):
-		print("Hit")
+	touching_list.push_back(body)
+
+func _on_body_exited(body: Node2D) -> void:
+	touching_list.erase(body)
 
 #Called when an animation for the ship is finished
 #Return to the normal state
