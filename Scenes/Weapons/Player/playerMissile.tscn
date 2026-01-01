@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvbfkl3o0md70"]
+
+[ext_resource type="Texture2D" uid="uid://dlmj0j2amq6it" path="res://Art/MissileAnimation/0001.png" id="1_5hpua"]
+[ext_resource type="PackedScene" uid="uid://c0t2wi3cvnmtl" path="res://Scenes/Prefabs/Trail2D.tscn" id="1_20d8b"]
+[ext_resource type="Script" uid="uid://s1xp2xx3adex" path="res://Scripts/missile.gd" id="1_cqt8b"]
+[ext_resource type="Texture2D" uid="uid://dwfbtcg5my2uj" path="res://Art/MissileAnimation/0002.png" id="2_20d8b"]
+[ext_resource type="Texture2D" uid="uid://dr8ngtwuf8de5" path="res://Art/MissileAnimation/0003.png" id="3_cqt8b"]
+[ext_resource type="Texture2D" uid="uid://rrdpa7t1kb3g" path="res://Art/MissileAnimation/0004.png" id="4_u1wq4"]
+
+[sub_resource type="Gradient" id="Gradient_cqt8b"]
+colors = PackedColorArray(0, 0, 0, 1, 0.96, 0.50064, 0.00959999, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxo1e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5hpua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_20d8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cqt8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u1wq4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rx7fx"]
+radius = 3.0
+height = 32.0
+
+[node name="Missile" type="RigidBody2D"]
+script = ExtResource("1_cqt8b")
+
+[node name="Trail2D" parent="." instance=ExtResource("1_20d8b")]
+position = Vector2(0, 16)
+gradient = SubResource("Gradient_cqt8b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_mxo1e")
+frame_progress = 0.8745474
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_rx7fx")
