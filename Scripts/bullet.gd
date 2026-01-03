@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var impact_damage = 0;
-@export var speed = 500;
+@export var speed = 1250;
 @export var cooldown = 0.5;
 @export var lifetime = 1;
 
