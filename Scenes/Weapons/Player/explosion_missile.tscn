@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://ffkhtni0u24u"]
+
+[ext_resource type="Texture2D" uid="uid://drtkr76xebpij" path="res://Art/boom.png" id="1_vilyw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipp75"]
+atlas = ExtResource("1_vilyw")
+region = Rect2(17, 3, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntsgt"]
+atlas = ExtResource("1_vilyw")
+region = Rect2(34, 3, 24, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46h8u"]
+atlas = ExtResource("1_vilyw")
+region = Rect2(61, 3, 23, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3xjd3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipp75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntsgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46h8u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xsdy3"]
+
+[node name="Explosion_Missile" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3xjd3")
+frame_progress = 0.6782969
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xsdy3")
