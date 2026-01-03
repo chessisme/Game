@@ -19,3 +19,4 @@ position = Vector2(723, 181)
 
 [node name="Missile" parent="." instance=ExtResource("4_fuudy")]
 position = Vector2(744, 516)
+mass = 0.001
