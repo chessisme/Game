@@ -1,8 +1,8 @@
 extends Area2D
 
 @export var impact_damage = 0;
-@export var speed = 500;
-@export var cooldown = 0.5;
+@export var speed = 1500;
+@export var cooldown = 0.1;
 @export var lifetime = 1;
 
 @onready var rootNode = get_node("/root")
