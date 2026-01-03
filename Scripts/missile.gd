@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Area2D
 
 @export var explosion :PackedScene
 var animation_player

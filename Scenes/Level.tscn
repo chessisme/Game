@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://rg6opusri15a"]
+[gd_scene load_steps=5 format=3 uid="uid://rg6opusri15a"]
 
 [ext_resource type="PackedScene" uid="uid://c8vkxrhkn1x14" path="res://Scenes/player.tscn" id="1_0ba56"]
 [ext_resource type="Script" uid="uid://biiws1ceu152u" path="res://Scripts/camera_2d.gd" id="1_vsvp5"]
 [ext_resource type="PackedScene" uid="uid://cb0w6yiisdcrp" path="res://Scenes/Enemy.tscn" id="3_8rbpu"]
 [ext_resource type="PackedScene" uid="uid://bvbfkl3o0md70" path="res://Scenes/Weapons/Player/playerMissile.tscn" id="4_fuudy"]
-[ext_resource type="Texture2D" uid="uid://1d7eexj3bkmg" path="res://icon.svg" id="5_xylue"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj5wv"]
-size = Vector2(132, 131)
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,13 +20,3 @@ position = Vector2(723, 181)
 [node name="Missile" parent="." instance=ExtResource("4_fuudy")]
 position = Vector2(744, 516)
 mass = 0.001
-
-[node name="TestBlock" type="Area2D" parent="."]
-position = Vector2(350, 394)
-
-[node name="Sprite2D" type="Sprite2D" parent="TestBlock"]
-texture = ExtResource("5_xylue")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestBlock"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_tj5wv")
