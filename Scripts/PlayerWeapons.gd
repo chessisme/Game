@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		new_projectile.position = global_position
 		new_projectile.rootNode = rootNode
 		rootNode.add_child(new_projectile)
-		secondary_cooldown = new_projectile.cooldown
+		primary_cooldown = new_projectile.cooldown
 	if(Input.is_action_pressed("Fire Secondary Weapon") and secondary_cooldown <=0):
 		new_projectile = SecondaryWeapon.instantiate();
 		new_projectile.position = global_position
