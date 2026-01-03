@@ -11,19 +11,22 @@ var animation_player
 @export var tracking = false;
 @export var tracking_rate = 0;
 
-var rootNode
-func _ready() -> void:
-	animation_player = $AnimatedSprite2D
-	animation_player.play()
-	rootNode = get_node("/root")
-	
+@onready var rootNode = get_node("/root")
 
+func _ready() -> void:
+	#animation_player = $AnimatedSprite2D
+	#animation_player.play()
+	linear_velocity =  Vector2(0, -speed)
+	pass
+	
 func _process(delta: float) -> void:
-	position.y -= speed * delta
+	print(delta)
+	#position.y -= speed * delta
+	
 	if(lifetime > 0):
 		lifetime -= delta
 	if(lifetime <= 0):
-		queue_free()
+		Detonate()
 	pass
 
 func Detonate() -> void:

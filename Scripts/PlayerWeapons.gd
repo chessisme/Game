@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 		print("Fire Secondary")
 		new_projectile = SecondaryWeapon.instantiate();
 		new_projectile.position = global_position
+		new_projectile.rootNode = rootNode
 		rootNode.add_child(new_projectile)
 		secondary_cooldown = new_projectile.cooldown
 	
