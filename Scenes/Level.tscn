@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://rg6opusri15a"]
+[gd_scene load_steps=5 format=3 uid="uid://rg6opusri15a"]
 
 [ext_resource type="PackedScene" uid="uid://c8vkxrhkn1x14" path="res://Scenes/player.tscn" id="1_0ba56"]
 [ext_resource type="Script" uid="uid://biiws1ceu152u" path="res://Scripts/camera_2d.gd" id="1_vsvp5"]
 [ext_resource type="PackedScene" uid="uid://cb0w6yiisdcrp" path="res://Scenes/Enemy.tscn" id="3_8rbpu"]
+[ext_resource type="PackedScene" uid="uid://bvbfkl3o0md70" path="res://Scenes/Weapons/Player/playerMissile.tscn" id="4_fuudy"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,3 +16,6 @@ scale = Vector2(0.50921774, 0.5)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("3_8rbpu")]
 position = Vector2(723, 181)
+
+[node name="Missile" parent="." instance=ExtResource("4_fuudy")]
+position = Vector2(744, 516)

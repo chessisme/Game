@@ -35,6 +35,7 @@ radius = 3.0
 height = 32.0
 
 [node name="Missile" type="RigidBody2D"]
+gravity_scale = 0.0
 script = ExtResource("1_cqt8b")
 
 [node name="Trail2D" parent="." instance=ExtResource("1_20d8b")]

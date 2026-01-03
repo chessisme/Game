@@ -14,6 +14,7 @@ func _ready() -> void:
 	animation_player.play()
 
 func _process(delta: float) -> void:
+	position.y = position.y - speed * delta
 	pass
 
 func Detonate() -> void:
