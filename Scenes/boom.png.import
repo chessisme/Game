@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://72dn4d17iowj"
-path="res://.godot/imported/PixelPlanesAssetPack.png-b7ecb34873350b068472c4635110717c.ctex"
+uid="uid://veit2pbnvwqy"
+path="res://.godot/imported/boom.png-d3016d22c44929711e34182d17087268.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/PixelPlanesAssetPack.png"
-dest_files=["res://.godot/imported/PixelPlanesAssetPack.png-b7ecb34873350b068472c4635110717c.ctex"]
+source_file="res://Scenes/boom.png"
+dest_files=["res://.godot/imported/boom.png-d3016d22c44929711e34182d17087268.ctex"]
 
 [params]
 
