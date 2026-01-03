@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://c8vkxrhkn1x14"]
+[gd_scene load_steps=25 format=3 uid="uid://c8vkxrhkn1x14"]
 
+[ext_resource type="Script" uid="uid://u3m4gf3elfce" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Script" uid="uid://bt3ofdwrcnry6" path="res://Scripts/PlayerWeapons.gd" id="1_l6n3p"]
 [ext_resource type="Texture2D" uid="uid://cqgwrm5j5ovc0" path="res://Art/playerShip.png" id="2_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://bvbfkl3o0md70" path="res://Scenes/Weapons/Player/playerMissile.tscn" id="2_olqyp"]
@@ -102,10 +103,10 @@ animations = [{
 [sub_resource type="Gradient" id="Gradient_l6n3p"]
 colors = PackedColorArray(0, 0.72485834, 0.72485846, 1, 1, 1, 1, 1)
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" node_paths=PackedStringArray("animation_player")]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_l6n3p")
-SecondaryWeapon = ExtResource("2_olqyp")
+script = ExtResource("1_cvnsp")
+animation_player = NodePath("AnimatedSprite2D")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -124,6 +125,11 @@ position = Vector2(0, 31)
 points = PackedVector2Array(0, 0)
 width = 15.0
 gradient = SubResource("Gradient_l6n3p")
+
+[node name="Weapon Handler" type="Node2D" parent="."]
+position = Vector2(0, -66)
+script = ExtResource("1_l6n3p")
+SecondaryWeapon = ExtResource("2_olqyp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

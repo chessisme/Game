@@ -4,7 +4,9 @@ extends RigidBody2D
 var animation_player
 
 @export var impact_damage = 0;
-@export var speed = 1000;
+@export var speed = 2000;
+@export var cooldown = 0.5;
+@export var lifetime = 1;
 
 @export var tracking = false;
 @export var tracking_rate = 0;
@@ -12,9 +14,14 @@ var animation_player
 func _ready() -> void:
 	animation_player = $AnimatedSprite2D
 	animation_player.play()
+	
 
 func _process(delta: float) -> void:
 	position.y = position.y - speed * delta
+	if(lifetime > 0):
+		lifetime -= delta
+	if(lifetime <= 0):
+		queue_free()
 	pass
 
 func Detonate() -> void:

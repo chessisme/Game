@@ -26,7 +26,7 @@ func _ready() -> void:
 	#set the camera's starting position
 	position = screen_size/2
 	position.y = screen_size.y/1.25
-	#set the limits of the play area to be used in the movement code
+	#set the limits of the play area to be used in 
 	left_limit = Vector2(screen_size.x*.2, 0)
 	right_limit = Vector2(screen_size.x*.8, screen_size.y)
 
