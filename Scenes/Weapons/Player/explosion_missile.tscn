@@ -35,13 +35,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_xsdy3"]
 
 [node name="Explosion_Missile" type="RigidBody2D"]
+scale = Vector2(2.5, 2.5)
 gravity_scale = 0.0
 script = ExtResource("1_od4gk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_3xjd3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_xsdy3")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="animation_finished"]
