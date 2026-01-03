@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 	player_movement_vector = player_movement_vector.normalized()
 	
 	#Dodge input
-	if (Input.is_action_pressed("Dodge")):
+	if (Input.is_action_just_pressed("Dodge")):
 		animation_state = "dodge"
 		if(player_movement_vector.x < 0):
 			animation_player.flip_h = true
