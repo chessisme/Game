@@ -16,15 +16,6 @@ var animation_player
 func _ready() -> void:
 	animation_player = $AnimatedSprite2D
 	animation_player.play()
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-	#linear_velocity =  Vector2(0, -speed)
->>>>>>> Stashed changes
-	pass
-=======
-
->>>>>>> Stashed changes
 	
 func _process(delta: float) -> void:
 	position.y -= speed * delta
