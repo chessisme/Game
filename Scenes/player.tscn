@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://nx5tnpbdboe1" path="res://Art/ShipFlipAnimation/frame0014.png" id="16_wohnl"]
 [ext_resource type="Texture2D" uid="uid://bko1tfyfmltq6" path="res://Art/ShipFlipAnimation/frame0015.png" id="17_36dho"]
 [ext_resource type="PackedScene" uid="uid://c0t2wi3cvnmtl" path="res://Scenes/Prefabs/Trail2D.tscn" id="20_l6n3p"]
-[ext_resource type="PackedScene" uid="uid://bpqvn8hwym5yi" path="res://Scenes/Weapons/Player/bullet.tscn" id="22_bi64h"]
+[ext_resource type="PackedScene" path="res://Scenes/Weapons/Player/bullet.tscn" id="22_bi64h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v0iea"]
 animations = [{
