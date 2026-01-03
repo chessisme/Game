@@ -19,7 +19,7 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	position.y = position.y - speed * delta
+	position.y -= speed * delta
 	if(lifetime > 0):
 		lifetime -= delta
 	if(lifetime <= 0):
