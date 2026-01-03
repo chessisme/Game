@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://rrdpa7t1kb3g" path="res://Art/MissileAnimation/0004.png" id="4_u1wq4"]
 
 [sub_resource type="Gradient" id="Gradient_cqt8b"]
-colors = PackedColorArray(0, 0, 0, 1, 0.96, 0.50064, 0.00959999, 1)
+colors = PackedColorArray(0.9975588, 0.06489257, 1.1551381e-06, 1, 1, 0.8333334, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mxo1e"]
 animations = [{
@@ -44,6 +44,7 @@ explosion = ExtResource("2_u1wq4")
 [node name="Trail2D" parent="." instance=ExtResource("1_20d8b")]
 position = Vector2(0, 16)
 gradient = SubResource("Gradient_cqt8b")
+length = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)

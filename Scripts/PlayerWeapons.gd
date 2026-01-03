@@ -17,9 +17,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if (Input.is_action_pressed("Fire Main Weapon") and primary_cooldown <= 0):
-		print("Fire Primary")
+		new_projectile = PrimaryWeapon.instantiate();
+		new_projectile.position = global_position
+		new_projectile.rootNode = rootNode
+		rootNode.add_child(new_projectile)
+		secondary_cooldown = new_projectile.cooldown
 	if(Input.is_action_pressed("Fire Secondary Weapon") and secondary_cooldown <=0):
-		print("Fire Secondary")
 		new_projectile = SecondaryWeapon.instantiate();
 		new_projectile.position = global_position
 		new_projectile.rootNode = rootNode

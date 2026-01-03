@@ -17,20 +17,23 @@ func _ready() -> void:
 	animation_player = $AnimatedSprite2D
 	animation_player.play()
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 	#linear_velocity =  Vector2(0, -speed)
 >>>>>>> Stashed changes
 	pass
+=======
+
+>>>>>>> Stashed changes
 	
 func _process(delta: float) -> void:
-	print(delta)
 	position.y -= speed * delta
 	
 	if(lifetime > 0):
 		lifetime -= delta
 	if(lifetime <= 0):
 		Detonate()
-	pass
+
 
 func Detonate() -> void:
 	var explosion_instance = explosion.instantiate()
