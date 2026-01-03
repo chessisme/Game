@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpqvn8hwym5yi"]
+
+[ext_resource type="Texture2D" uid="uid://civv4rtjxwk82" path="res://Art/bullets.png" id="1_v7oki"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8qja"]
+atlas = ExtResource("1_v7oki")
+region = Rect2(17, 0, 9, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t4vbm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8qja")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2b2rl"]
+radius = 2.0
+height = 8.0
+
+[node name="Bullet" type="RigidBody2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t4vbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2b2rl")
