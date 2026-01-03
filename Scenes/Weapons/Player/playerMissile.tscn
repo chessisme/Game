@@ -40,12 +40,6 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_cqt8b")
 explosion = ExtResource("2_u1wq4")
-impact_damage = null
-speed = null
-cooldown = null
-lifetime = null
-tracking = null
-tracking_rate = null
 
 [node name="Trail2D" parent="." instance=ExtResource("1_20d8b")]
 position = Vector2(0, 16)
